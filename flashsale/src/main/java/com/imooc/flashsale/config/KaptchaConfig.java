@@ -1,0 +1,43 @@
+package com.imooc.flashsale.config;
+
+import java.util.Properties;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.google.code.kaptcha.util.Config;
+
+@Configuration
+public class KaptchaConfig {
+
+	@Bean
+	public DefaultKaptcha getDefaultKaptcha() {
+
+		Properties properties = new Properties();
+		// 图片边框
+		properties.setProperty("kaptcha.border", "yes");
+		// 边框颜色
+		properties.setProperty("kaptcha.border.color", "105,179,90");
+		// 字体颜色
+		properties.setProperty("kaptcha.textproducer.font.color", "red");
+		// 图片宽
+		properties.setProperty("kaptcha.image.width", "110");
+		// 图片高
+		properties.setProperty("kaptcha.image.height", "35");
+		// 字体大小
+		properties.setProperty("kaptcha.textproducer.font.size", "28");
+		// 验证码长度
+		properties.setProperty("kaptcha.textproducer.char.length", "4");
+		// 字体
+		properties.setProperty("kaptcha.textproducer.font.names", "Arial");
+		// 干扰线颜色
+		properties.setProperty("kaptcha.noise.color", "blue");
+
+		Config config = new Config(properties);
+		DefaultKaptcha kaptchaProducer = new DefaultKaptcha();
+		kaptchaProducer.setConfig(config);
+
+		return kaptchaProducer;
+	}
+}
