@@ -28,8 +28,8 @@ public class SmsUtil {
 	// 产品域名,开发者无需替换
 	final static String domain = "dysmsapi.aliyuncs.com";
 
-	private static final String TEMPLATE_CODE = "SMS_182681326";
-	private static final String SIGN_NAME = "ZZINC";
+	private static final String TEMPLATE_CODE = "";
+	private static final String SIGN_NAME = "";
 	private static final int CODE_LENGTH = 6;
 
 	// 读取属性文件
